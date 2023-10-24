@@ -5,6 +5,13 @@ html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: initial;
+  }
 }
 
 body {
@@ -69,6 +76,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .dw-gif {
@@ -82,7 +90,7 @@ video {
 
 .dw-gif {
   background-color: #000;
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/daniel-winn-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -111,6 +119,61 @@ video {
   color: white;
 }
 
+.dw-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.dw-button:hover {
+  transform: scale(0.95);
+}
+
+.hero-button:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* portfolio gallery styles */
+
+.portfolio-container {
+  margin: 1rem auto 0 auto;
+}
+
+.portfolio-container h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 0.5rem;
+  grid-auto-rows: 300px;
+}
+
+.gallery-item {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-img {
+  height: 100%;
+  transform: scale(0.5);
+  object-fit: cover;
+  transition: 0.25s ease-in-out;
+}
+
+.gallery-img:hover {
+  transform: scale(0.6);
+}
+
 /* add media queries for large screen */
 
 @media (min-width: 600px) {
@@ -125,11 +188,24 @@ video {
   .dw-text-box {
     padding: 2rem;
   }
+
+  .portfolio-container h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
 }
 
 @media (min-width: 920px) {
   .dw-heading {
     font-size: 6rem;
     line-height: 6rem;
+  }
+
+  .portfolio-container {
+    max-width: 1400px;
+  }
+  .portfolio-container h1 {
+    font-size: 4rem;
+    line-height: 4rem;
   }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/glightbox.min.css">
     <title>Daniel's Portfolio</title>
   </head>
   <body>
@@ -11,7 +12,7 @@
     <header class="dw-box">
       <section class="dw-image-box">
         <div class="dw-gif">
-            <img src="https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gif" alt="Background Gif">
+            <img src="https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gi" alt=" ">
           </div>
       </section>
       <section class="dw-text-box">
@@ -20,10 +21,39 @@
             <p class="dw-text">
                 Aspiring Software Engineer
             </p>
+            <p>
+                <a href="#portfolio">
+                    <button type ="button" class="dw-button">View Portfolio</button>
+                </a>
+            </p>
         </h1>
       </section>
       </section>
     </header>
     <!-- End DW Header -->
+
+    <!-- Begin Portfolio -->
+<section id="portfolio" class="portfolio-container">
+    <h1>My Portfolio</h1>
+    <section class="portfolio-gallery">
+        <!-- div class="gallery-item">
+            <a href="img/portfolio-graphic.png" class="glightbox"></a>
+            <img src="img/portfolio-graphic.png" alt="Portfolio Graphic" class="gallery-img"></a>
+        </div -->
+        <div class="gallery-item">
+            <a href="img/daniel-winn-csulb-sae-logo.png" class="glightbox" data-glightbox="title: CSULB Baja SAE; description:- Researching and selecting suspension sensors, vital to make informed decisions in vehicle design and optimization of the vehicle, focusing on accuracy and reliability. <br>- Collaboration with other SAE sub-teams, ensuring valuable information bridges the gap between data science and practical application. <br> - Developing code within Arduino IDE, interfacing with sensors, and collecting, storing and formatting data.">
+            <img src="img/daniel-winn-csulb-sae-logo.png" alt="Elbee Racing Logo" class="gallery-img"></a>
+        </div>
+        <div class="gallery-item">
+            <a href="img/daniel-winn-codingart.avif" class="glightbox" data-glightbox="title: Placeholder; description: More to come soon">
+            <img src="img/daniel-winn-codingart.avif" alt="Placeholder Art" class="gallery-img"></a>
+        </div>
+    </section>
+</section>
+    <!-- End Portfolio -->
+    <script src="js/glightbox.min.js"></script>
+    <script type="text/javascript">
+        const lightbox = GLightbox({ loop: true });
+    </script>
   </body>
 </html>
