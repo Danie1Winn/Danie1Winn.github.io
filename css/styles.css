@@ -82,11 +82,13 @@ video {
 }
 
 .logo a,
-.nav-menu a {
+.nav-menu a,
+.bottom-nav a {
   display: block;
   text-decoration: none;
   letter-spacing: 0.2rem;
-  padding: 0.3rem;
+  justify-content: space-evenly;
+  padding: 0;
   color: #000;
 }
 
@@ -95,7 +97,7 @@ video {
   font-size: 2rem;
 }
 
-.nav-menu a {
+.nav-menu a .bottom-nav a {
   font-weight: 400;
   letter-spacing: 0.1rem;
   border-bottom: 1px solid #fff;
@@ -138,6 +140,7 @@ video {
 .bottom-nav a {
   color: #fff;
   border-bottom: 0;
+  padding: 0.1rem;
 }
 
 .bottom-nav a:hover {
@@ -311,6 +314,11 @@ video {
   line-height: 2rem;
 }
 
+.about-text h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
 .about-image img {
   height: 100%;
   object-fit: cover;
@@ -396,6 +404,10 @@ video {
     font-size: 3rem;
     line-height: 3rem;
   }
+  .about-container h2 {
+    font-size: 2.5rem;
+    font-size: 2.5rem;
+  }
   .portfolio-container h1 {
     font-size: 3rem;
     line-height: 3rem;
@@ -449,6 +461,10 @@ video {
   .contact-text h1 {
     font-size: 4rem;
     line-height: 4rem;
+  }
+  .about-container h2 {
+    font-size: 3rem;
+    line-height: 3rem;
   }
   .portfolio-text p,
   .about-text p,
