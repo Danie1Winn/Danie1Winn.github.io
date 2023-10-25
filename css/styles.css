@@ -19,6 +19,9 @@ body {
   padding: 0;
   min-height: 100%;
   max-width: 100%;
+  padding-bottom: 8rem;
+  background-color: #343038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
 *,
@@ -34,6 +37,103 @@ video {
   display: block;
 }
 
+/* Nav Bar Styles */
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 100;
+  height: 5.5rem;
+}
+
+.logo,
+.nav-item {
+  white-space: nowrap;
+  list-style: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+.nav-item {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 33.3%;
+  text-align: center;
+}
+
+.social-nav-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 10%;
+  padding: 0 0.15rem;
+}
+
+.logo a,
+.nav-menu a {
+  display: block;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+  padding: 0.8rem;
+  color: #000;
+}
+
+.logo a {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.nav-menu a {
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  border-bottom: 1px solid #fff;
+  transition: all ease 0.1s;
+}
+
+.nav-menu a:hover {
+  border-bottom: 1px solid #000;
+}
+
+/* Top Navbar Only Styles */
+
+.top-nav {
+  background: none;
+  position: fixed;
+  top: 0;
+}
+
+/* Modern Browsers */
+@supports (position: sticky) {
+  .top-nav {
+    position: -webkit-sticky; /*Safari*/
+    position: sticky;
+  }
+}
+
+.top-nav .logo a,
+.top-nav .nav-menu a {
+  color: white;
+}
+
+.top-nav .nav-menu a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.top-nav .nav-menu a:hover {
+  border-bottom: 1px solid #fff;
+}
+
 /* DW Styles */
 
 .dw-box {
@@ -46,6 +146,7 @@ video {
   align-items: start;
   height: 100%;
   width: 100%;
+  margin-top: -5.5rem;
 }
 
 .dw-image-box {
@@ -89,8 +190,6 @@ video {
 }
 
 .dw-gif {
-  background-color: #000;
-  background-image: url("../img/daniel-winn-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -126,7 +225,7 @@ video {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 5px;
   margin-top: 2rem;
 }
@@ -135,19 +234,27 @@ video {
   transform: scale(0.95);
 }
 
-.hero-button:active {
+.dw-button:active {
   background: rgba(0, 0, 0, 0.3);
 }
 
 /* portfolio gallery styles */
 
 .portfolio-container {
-  margin: 1rem auto 0 auto;
+  padding: 1rem auto 0 auto;
+}
+
+.portfolio-text {
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: white;
 }
 
 .portfolio-container h1 {
   font-size: 2rem;
   line-height: 2rem;
+  text-align: center;
+  padding: 20px;
 }
 
 .portfolio-gallery {
@@ -184,6 +291,7 @@ video {
 .about-text {
   margin: 0 auto;
   padding: 0 1rem;
+  color: white;
 }
 
 .about-text h1 {
@@ -202,8 +310,56 @@ video {
 }
 
 .about-social a {
-  color: black;
+  color: white;
   padding: 0 1rem 1rem 1rem;
+}
+
+/* resume styles */
+
+.resume-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1rem auto 0 auto;
+}
+
+.resume-text {
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: white;
+}
+
+/* contact styles */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem auto 0 auto;
+}
+
+.contact-text {
+  margin: 0 1rem;
+  padding: 0 1rem;
+  color: white;
+}
+
+.contact-text h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.section-stop {
+  scroll-margin-top: 5.5rem;
 }
 
 /* add media queries for large screen */
@@ -220,37 +376,84 @@ video {
   .dw-text-box {
     padding: 2rem;
   }
-  .portfolio-container h1,
-  .about-text h1 {
+  .about-container h1,
+  .resume-container h1,
+  .contact-container h1 {
     font-size: 3rem;
     line-height: 3rem;
   }
+  .portfolio-container h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
   .about-container {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 9rem;
   }
-  .about-text p {
+  .about-text p,
+  .portfolio-text p,
+  .contact-text p,
+  .resume-text p {
     font-size: 1.1rem;
     line-height: 1.5rem;
   }
+  .nav-bar {
+    justify-content: center;
+    line-height: 1.5rem;
+    padding: 0 4rem;
+  }
+  .nav-menu {
+    padding: 0 1rem;
+  }
+  .nav-item {
+    flex: 1 1;
+    padding: 0 0.35rem;
+  }
+  .section-stop {
+    scroll-margin-top: 5.5rem;
+  }
 }
+
 @media (min-width: 920px) {
   .dw-heading {
     font-size: 6rem;
     line-height: 6rem;
   }
-
+  .dw-box {
+    margin-top: -7.5rem;
+  }
   .portfolio-container,
-  .about-container {
+  .about-container,
+  .resume-container,
+  .contact-container {
     max-width: 1400px;
   }
   .portfolio-container h1,
-  .about-text h1 {
+  .about-text h1,
+  .resume-text h1,
+  .contact-text h1 {
     font-size: 4rem;
     line-height: 4rem;
   }
-  .about-text p {
+  .portfolio-text p,
+  .about-text p,
+  .resume-text p,
+  .contact-text p {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+  .nav-bar {
+    justify-content: center;
+    padding: 2rem 5rem;
+    line-height: 1rem;
+    height: 7.5rem;
+  }
+  .nav-menu {
+    width: auto;
+    justify-self: end;
+  }
+  .top-nav {
+    width: 100%;
   }
 }
