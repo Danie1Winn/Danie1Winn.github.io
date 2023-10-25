@@ -4,7 +4,7 @@ html {
   font-size: 100%;
   line-height: 1.5rem;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Andale Mono, monospace;
   height: 100%;
   scroll-behavior: smooth;
   background-color: #151416;
@@ -248,7 +248,7 @@ video {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* portfolio gallery styles */
+/* Portfolio Gallery Styles */
 
 .portfolio-container {
   padding: 1rem auto 0 auto;
